@@ -1,12 +1,12 @@
-#install.packages("plyr")
-#   install.packages("dplyr")
-#   install.packages("expss")
-#   install.packages("psych")
-#   install.packages("lubridate")
-#   install.packages("zoo")
-#install.packages("WriteXLS")
-#install.packages('openxlsx')
-#transactions$deal_type = if_else(transactions$owner_name == transactions$customer_name,"loan", "nikion")
+install.packages("plyr")
+install.packages("dplyr")
+install.packages("expss")
+install.packages("psych")
+install.packages("lubridate")
+install.packages("zoo")
+install.packages("WriteXLS")
+install.packages('openxlsx')
+
 avg_nikion = mean(transactions$total[transactions$deal_type == "nikion"])
 avg_loan = mean(transactions$total[transactions$deal_type == "loan"])
 avg_converet = mean(transactions$total[transactions$deal_type == "convert"])
@@ -216,6 +216,5 @@ n_distinct(daily_deals$Group.2[daily_deals$x > 1])/n_distinct(transactions$custo
 
 write(x = output,file = 'output.csv',sep = '\t')
 write(x = Harigim_nikion,file = 'output.csv',sep = '\n',append = TRUE)
-write(x = transfer_dest, file = 'transfer_dest.csv')
 
 View(transfer_dest)
