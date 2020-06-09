@@ -214,7 +214,4 @@ daily_deals = aggregate(transactions$deal_number,
                         FUN = n_distinct)
 n_distinct(daily_deals$Group.2[daily_deals$x > 1])/n_distinct(transactions$customer_name)
 
-write(x = output,file = 'output.csv',sep = '\t')
-write(x = Harigim_nikion,file = 'output.csv',sep = '\n',append = TRUE)
-
 View(transfer_dest)
